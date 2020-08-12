@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:free_chat/screens/pages/disc_page.dart';
+import 'package:free_chat/screens/pages/status_page.dart';
 
 class MainChat extends StatefulWidget {
   @override
@@ -8,7 +9,6 @@ class MainChat extends StatefulWidget {
 }
 
 class _MainChatState extends State<MainChat> {
-
   PageController _controller;
   int _page = 0;
 
@@ -30,15 +30,17 @@ class _MainChatState extends State<MainChat> {
       body: Container(
         child: PageView(
           controller: _controller,
-          onPageChanged: (p){
+          onPageChanged: (p) {
             setState(() {
               _page = p;
             });
           },
           children: <Widget>[
             DiscPage(),
-            Container(color: Colors.blue,),
-            Container(color: Colors.orange,)
+            StatusPage(),
+            Container(
+              color: Colors.orange,
+            )
           ],
         ),
       ),
@@ -63,9 +65,8 @@ class _MainChatState extends State<MainChat> {
     );
   }
 
-  void navigationTapped(int page){
-    _controller.animateToPage(page, duration: Duration(milliseconds: 300), curve: Curves.ease);
+  void navigationTapped(int page) {
+    _controller.animateToPage(page,
+        duration: Duration(milliseconds: 300), curve: Curves.ease);
   }
-
 }
-
