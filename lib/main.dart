@@ -12,6 +12,7 @@ class FreeChat extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xff21ce99),
         accentColor: Color(0xff21ce99),
+        scaffoldBackgroundColor: Colors.blueGrey[50],
       ),
       home: MainChat(),
     );
