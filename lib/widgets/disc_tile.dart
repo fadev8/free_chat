@@ -19,7 +19,9 @@ class DiscTile extends StatelessWidget {
         ),
         title: Text(message.sender.name),
         subtitle: Text(message.content),
-        trailing: Text(timeAgo.format(message.createdAt, locale: "en_short")),
+        trailing: Text(timeAgo.format(
+            DateTime.fromMillisecondsSinceEpoch(message.createdAt),
+            locale: "en_short")),
       ),
     );
   }
