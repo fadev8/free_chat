@@ -55,7 +55,7 @@ class _MainChatState extends State<MainChat> {
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.group),
-            title: Text('Users'),
+            title: Text('Community'),
           ),
         ],
       ),
