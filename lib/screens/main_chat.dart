@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:free_chat/screens/pages/disc_page.dart';
 import 'package:free_chat/screens/pages/status_page.dart';
 
+import 'pages/community_page.dart';
+
 class MainChat extends StatefulWidget {
   @override
   _MainChatState createState() => _MainChatState();
@@ -26,6 +28,7 @@ class _MainChatState extends State<MainChat> {
     return Scaffold(
       appBar: AppBar(
         title: Text('FreeChat'),
+        brightness: Brightness.dark,
       ),
       body: Container(
         child: PageView(
@@ -35,13 +38,7 @@ class _MainChatState extends State<MainChat> {
               _page = p;
             });
           },
-          children: <Widget>[
-            DiscPage(),
-            StatusPage(),
-            Container(
-              color: Colors.orange,
-            )
-          ],
+          children: <Widget>[DiscPage(), StatusPage(), CommunityPage()],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
