@@ -9,18 +9,22 @@ class StatusPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: ListView.builder(
-          itemCount: statusData.length,
-          itemBuilder: (context, index) {
-            return StatusTile(
-              status: statusData[index],
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => StoryPageView(
-                          status: statusData[index],
-                        )));
-              },
-            );
-          }),
+        itemCount: statusData.length,
+        itemBuilder: (context, index) {
+          return StatusTile(
+            status: statusData[index],
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => StoryPageView(
+                    status: statusData[index],
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }
